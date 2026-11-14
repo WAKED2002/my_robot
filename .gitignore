@@ -1,0 +1,15 @@
+# ROS 2 build folders (rebuilt automatically)
+build/
+install/
+log/
+
+# Recordings (big files)
+*.db3
+*.mcap
+rosbag2_*/
+
+# Python and editor leftovers
+__pycache__/
+*.pyc
+*.swp
+*~
