@@ -45,17 +45,18 @@ ament_target_dependencies(camera_reader rclcpp sensor_msgs)
 add_executable(color_finder src/color_finder.cpp)
 ament_target_dependencies(color_finder rclcpp sensor_msgs)
 
-install(TARGETS battery battery_monitor circle_driver pose_reader go_to_goal robot_go_to_goal DESTINATION lib/${PROJECT_NAME})
+install(TARGETS
+  battery
+  battery_monitor
+  circle_driver
+  pose_reader
+  go_to_goal
+  robot_go_to_goal
+  camera_reader
+  color_finder
+  DESTINATION lib/${PROJECT_NAME})
 
-install(TARGETS battery battery_monitor circle_driver pose_reader go_to_goal
-        robot_go_to_goal camera_reader DESTINATION lib/${PROJECT_NAME})
+install(DIRECTORY launch config urdf worlds maps
+  DESTINATION share/${PROJECT_NAME})
 
-install(TARGETS battery battery_monitor circle_driver pose_reader go_to_goal DESTINATION lib/${PROJECT_NAME})
-
-install(TARGETS battery battery_monitor circle_driver pose_reader DESTINATION lib/${PROJECT_NAME})
-
-install(TARGETS battery battery_monitor circle_driver DESTINATION lib/${PROJECT_NAME})
 ament_package()
-
-install(TARGETS battery battery_monitor circle_driver pose_reader go_to_goal
-        robot_go_to_goal camera_reader color_finder DESTINATION lib/${PROJECT_NAME})
