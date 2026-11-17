@@ -45,6 +45,9 @@ ament_target_dependencies(camera_reader rclcpp sensor_msgs)
 add_executable(color_finder src/color_finder.cpp)
 ament_target_dependencies(color_finder rclcpp sensor_msgs)
 
+add_executable(heading_reader src/heading_reader.cpp)
+ament_target_dependencies(heading_reader rclcpp nav_msgs)
+
 install(TARGETS
   battery
   battery_monitor
@@ -54,6 +57,7 @@ install(TARGETS
   robot_go_to_goal
   camera_reader
   color_finder
+  heading_reader
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch config urdf worlds maps
